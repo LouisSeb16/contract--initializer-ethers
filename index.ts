@@ -1,6 +1,9 @@
 import { JsonRpcProvider, ethers } from "ethers";
 
 export class ContractInitializer {
+    prototype(prototype: any, arg1: string) {
+        throw new Error('Method not implemented.');
+    }
 
     private provider: JsonRpcProvider;
 
@@ -8,7 +11,7 @@ export class ContractInitializer {
 
     private contractABI: any;
 
-    private contract: ethers.Contract;
+    private contract: ethers.Contract | undefined;
 
     constructor(providerUrl: string, contractAddress: string, contractABI: any) {
 
@@ -22,7 +25,7 @@ export class ContractInitializer {
 
     };
 
-    private async initialize() {
+    async initialize() {
 
         if (!this.provider) {
 

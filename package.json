@@ -1,10 +1,10 @@
 {
-  "name": "initialize-contract-module",
+  "name": "initialize-contract",
   "version": "1.0.1",
   "description": "A Node.js module for initializing Ethereum contracts using ethers.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "ethereum",
@@ -14,6 +14,14 @@
   "author": "Louismaria Ajuruchi",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-typescript": "^7.23.3",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {

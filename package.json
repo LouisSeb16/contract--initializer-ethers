@@ -1,0 +1,22 @@
+{
+  "name": "initialize-contract-module",
+  "version": "1.0.1",
+  "description": "A Node.js module for initializing Ethereum contracts using ethers.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ethereum",
+    "contracts",
+    "ethers.js"
+  ],
+  "author": "Louismaria Ajuruchi",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "ethers": "^6.11.0"
+  }
+}

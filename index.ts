@@ -10,29 +10,43 @@ export class ContractInitializer {
 
     private contract: ethers.Contract | undefined;
 
-    constructor(provider: any, contractAddress: any, contractABI: any) {
+    constructor(contractConfig: any) {
 
-        this.provider = new JsonRpcProvider(provider);
+        const { provider, contractAddress, contractABI } = contractConfig;
 
-        this.contractAddress = contractAddress;
-        
-        this.contractABI = contractABI;
+        if (contractConfig) {
 
-        this.initialize();
+            this.provider = new JsonRpcProvider(provider);
+
+            this.contractAddress = contractAddress;
+
+            this.contractABI = contractABI;
+
+            this.initialize();
+
+        };
 
     };
 
     async initialize() {
 
-        if (!this.provider || !this.contractAddress || !this.contractABI) {
+        try {
 
-            throw new Error('Contract configurations not provided');
+            if (!this.provider || !this.contractAddress || !this.contractABI) {
+
+                throw new Error('Contract configurations not provided');
+
+            };
+
+            this.contract = new ethers.Contract(this.contractAddress, this.contractABI, this.provider);
+
+            console.log('[Contract Initialized]', this.contract);
+
+        } catch (e) {
+
+            console.log(e);
 
         };
-
-        this.contract = new ethers.Contract(this.contractAddress, this.contractABI, this.provider);
-
-        console.log('[Contract Initialized]', this.contract);
 
     };
 };
